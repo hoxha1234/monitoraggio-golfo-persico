@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b58b9e6c11d38caccf58330d739bbe87 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b58b9e6c11d38caccf58330d739bbe87" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b58b9e6c11d38caccf58330d739bbe87 = L.map(
+                "map_b58b9e6c11d38caccf58330d739bbe87",
+                {
+                    center: [26.5, 56.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b910e5110b57396c0c05cb260dafaf39 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b910e5110b57396c0c05cb260dafaf39.addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var heat_map_ea760ef3b33d66cd93d499e85f70a25d = L.heatLayer(
+                [[26.249080237694724, 57.40875388329368], [27.40142861281983, 56.82539847008334], [26.96398788362281, 57.318496824692566], [26.697316968394073, 57.18448205128295], [25.812037280884873, 56.293699936433256], [25.811989040672405, 57.26562270506935], [25.616167224336397, 54.76547750615576], [27.23235229154987, 55.087948587257436], [26.70223002348642, 54.635681866731616], [26.91614515559209, 55.475990992289795], [25.541168988591604, 55.66603186906845], [27.439819704323988, 55.31404709532169], [27.164885281600842, 56.98621252745579], [25.92467822135655, 55.57025998008077], [25.8636499344142, 55.342803529062145], [25.866809019706867, 56.12808824947474], [26.108484485919075, 54.92277267492429], [26.549512863264475, 56.90659094226212], [26.363890037284232, 54.72365193103931], [26.082458280396082, 57.46066080980155], [26.723705789444757, 56.81673430788997], [25.778987721304084, 55.09614704460252], [26.084289297070438, 54.516566351370805], [26.232723686587384, 56.9463842853645], [26.412139968434072, 56.62057203154285], [27.070351922786028, 56.68702150412296], [25.89934756431672, 56.813811040057836], [26.528468876827223, 54.722133955202274], [26.684829137724083, 55.575397185632816], [25.592900825439994, 54.84760717857539], [26.715089703802878, 57.08931027762678], [25.841048247374584, 56.36989438048268], [25.630103185970558, 55.492694074557946], [27.397771074506668, 54.69067505085807], [27.43126406614912, 55.43294696514699], [27.116794696232922, 55.475549966080244], [26.10922753834674, 56.68881853501419], [25.695344228012768, 56.41267241406564], [26.868466053024314, 57.16163822772898], [26.380304987479203, 55.91664477548585], [25.744076469689556, 54.858782737814906], [26.49035382022254, 56.639734361668985], [25.568777042230437, 56.782355145850694], [27.318640804157564, 56.183831592708486], [26.017559963200036, 56.81290153986368], [26.825044568707963, 55.98138678909317], [26.123422152178822, 56.06819848814598], [26.54013604235562, 55.782623055075646], [26.59342055868656, 54.576257380232285], [25.869708911051053, 54.823674280979915]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 20,
+}
+            );
+        
+    
+            heat_map_ea760ef3b33d66cd93d499e85f70a25d.addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var marker_8d7e46dfd400aedcacb2ec724e31c12f = L.marker(
+                [25.812037280884873, 56.293699936433256],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_ba23c2f8962565699353e8a1fd5d35fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f18801e6277d17538c1306195d9bb4e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c38c95d1b85897d61223cc114e6ca15 = $(`<div id="html_7c38c95d1b85897d61223cc114e6ca15" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_6f18801e6277d17538c1306195d9bb4e.setContent(html_7c38c95d1b85897d61223cc114e6ca15);
+            
+        
+
+        marker_8d7e46dfd400aedcacb2ec724e31c12f.bindPopup(popup_6f18801e6277d17538c1306195d9bb4e)
+        ;
+
+        
+    
+    
+                marker_8d7e46dfd400aedcacb2ec724e31c12f.setIcon(icon_ba23c2f8962565699353e8a1fd5d35fc);
+            
+    
+            var marker_6566030dacad9ca5ac6015e8e2e97952 = L.marker(
+                [27.164885281600842, 56.98621252745579],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_0136b5e3808b77976ce6ec89841f2a41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a61a4efd2e30ab33c9523ae62c39d9e6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe9618248c809746c56f4fc6bdcec87d = $(`<div id="html_fe9618248c809746c56f4fc6bdcec87d" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_a61a4efd2e30ab33c9523ae62c39d9e6.setContent(html_fe9618248c809746c56f4fc6bdcec87d);
+            
+        
+
+        marker_6566030dacad9ca5ac6015e8e2e97952.bindPopup(popup_a61a4efd2e30ab33c9523ae62c39d9e6)
+        ;
+
+        
+    
+    
+                marker_6566030dacad9ca5ac6015e8e2e97952.setIcon(icon_0136b5e3808b77976ce6ec89841f2a41);
+            
+    
+            var marker_5d6cc642c236f4ab7c92f4af26836e35 = L.marker(
+                [25.92467822135655, 55.57025998008077],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_f3bebaf93d6441fddce7c956616daf22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39444cb0f3d77fae791d9ffdb0e4c5eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eaddcbb5d52f1e22a75a3a659d412dfd = $(`<div id="html_eaddcbb5d52f1e22a75a3a659d412dfd" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_39444cb0f3d77fae791d9ffdb0e4c5eb.setContent(html_eaddcbb5d52f1e22a75a3a659d412dfd);
+            
+        
+
+        marker_5d6cc642c236f4ab7c92f4af26836e35.bindPopup(popup_39444cb0f3d77fae791d9ffdb0e4c5eb)
+        ;
+
+        
+    
+    
+                marker_5d6cc642c236f4ab7c92f4af26836e35.setIcon(icon_f3bebaf93d6441fddce7c956616daf22);
+            
+    
+            var marker_3ad1b7cd405ff6b8636e8da6cc5cee2c = L.marker(
+                [25.866809019706867, 56.12808824947474],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_00e3844df9a3e15b174f9d87269c0a44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb76c0aae1a47ff26e886b27691cf540 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abf1e4b6980fa903089d3292e2a186c3 = $(`<div id="html_abf1e4b6980fa903089d3292e2a186c3" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_cb76c0aae1a47ff26e886b27691cf540.setContent(html_abf1e4b6980fa903089d3292e2a186c3);
+            
+        
+
+        marker_3ad1b7cd405ff6b8636e8da6cc5cee2c.bindPopup(popup_cb76c0aae1a47ff26e886b27691cf540)
+        ;
+
+        
+    
+    
+                marker_3ad1b7cd405ff6b8636e8da6cc5cee2c.setIcon(icon_00e3844df9a3e15b174f9d87269c0a44);
+            
+    
+            var marker_8aa1d4b47d49f82b7a0a532b5407ab2d = L.marker(
+                [26.108484485919075, 54.92277267492429],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_5a8eb7795876910cf6fd86a3fc2c6c10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fa8fd05ec13a4d08f3a942f090de6d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ea9ac1e713fe76e73c7f071238d926c = $(`<div id="html_7ea9ac1e713fe76e73c7f071238d926c" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_6fa8fd05ec13a4d08f3a942f090de6d0.setContent(html_7ea9ac1e713fe76e73c7f071238d926c);
+            
+        
+
+        marker_8aa1d4b47d49f82b7a0a532b5407ab2d.bindPopup(popup_6fa8fd05ec13a4d08f3a942f090de6d0)
+        ;
+
+        
+    
+    
+                marker_8aa1d4b47d49f82b7a0a532b5407ab2d.setIcon(icon_5a8eb7795876910cf6fd86a3fc2c6c10);
+            
+    
+            var marker_c5d15d20f22d100445b50a99908daf4d = L.marker(
+                [26.363890037284232, 54.72365193103931],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_ad8b7769df09f1ea79266299d51b6aa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2a99309e43a76bf79dcda5d0e2d6fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d4ad009ac46af2426c28612a6282237 = $(`<div id="html_4d4ad009ac46af2426c28612a6282237" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_f2a99309e43a76bf79dcda5d0e2d6fb2.setContent(html_4d4ad009ac46af2426c28612a6282237);
+            
+        
+
+        marker_c5d15d20f22d100445b50a99908daf4d.bindPopup(popup_f2a99309e43a76bf79dcda5d0e2d6fb2)
+        ;
+
+        
+    
+    
+                marker_c5d15d20f22d100445b50a99908daf4d.setIcon(icon_ad8b7769df09f1ea79266299d51b6aa2);
+            
+    
+            var marker_c161eecd03981d1eaa068dfb3cf7e174 = L.marker(
+                [26.723705789444757, 56.81673430788997],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_bf72380f60f336e51a57f6958379def3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_538e5d58153e724dbc74af610b22f65c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b91538ff7ecdf81e5155cbcf5bfddcc9 = $(`<div id="html_b91538ff7ecdf81e5155cbcf5bfddcc9" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_538e5d58153e724dbc74af610b22f65c.setContent(html_b91538ff7ecdf81e5155cbcf5bfddcc9);
+            
+        
+
+        marker_c161eecd03981d1eaa068dfb3cf7e174.bindPopup(popup_538e5d58153e724dbc74af610b22f65c)
+        ;
+
+        
+    
+    
+                marker_c161eecd03981d1eaa068dfb3cf7e174.setIcon(icon_bf72380f60f336e51a57f6958379def3);
+            
+    
+            var marker_e308050d1aa996d4dd7a1659a259cd0f = L.marker(
+                [25.778987721304084, 55.09614704460252],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_de92635150cb0934fa522aa087ed8eb0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_def27e3bb93adfa5096aa6a238fbc386 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c6e95fda385d9f84e2c45eb64f0f39e = $(`<div id="html_3c6e95fda385d9f84e2c45eb64f0f39e" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_def27e3bb93adfa5096aa6a238fbc386.setContent(html_3c6e95fda385d9f84e2c45eb64f0f39e);
+            
+        
+
+        marker_e308050d1aa996d4dd7a1659a259cd0f.bindPopup(popup_def27e3bb93adfa5096aa6a238fbc386)
+        ;
+
+        
+    
+    
+                marker_e308050d1aa996d4dd7a1659a259cd0f.setIcon(icon_de92635150cb0934fa522aa087ed8eb0);
+            
+    
+            var marker_703a54c833f1f891997bb4cdb5bb8c7b = L.marker(
+                [25.89934756431672, 56.813811040057836],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_dcf6b62b35fe72cdf363e746e32f2dd5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1f390edd815e4e81b4e61717cded52b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4c91ecec7cb57221be963b36cddf8bc = $(`<div id="html_f4c91ecec7cb57221be963b36cddf8bc" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_c1f390edd815e4e81b4e61717cded52b.setContent(html_f4c91ecec7cb57221be963b36cddf8bc);
+            
+        
+
+        marker_703a54c833f1f891997bb4cdb5bb8c7b.bindPopup(popup_c1f390edd815e4e81b4e61717cded52b)
+        ;
+
+        
+    
+    
+                marker_703a54c833f1f891997bb4cdb5bb8c7b.setIcon(icon_dcf6b62b35fe72cdf363e746e32f2dd5);
+            
+    
+            var marker_8c016b8e45a3b1d1a850842f1b070fff = L.marker(
+                [26.528468876827223, 54.722133955202274],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_78f5e7a025aaea345e84eccd3f31765d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb124fde856e28da7f4472081b7dd003 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0694b3e5781e9a9c0997b88b0419720 = $(`<div id="html_b0694b3e5781e9a9c0997b88b0419720" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_cb124fde856e28da7f4472081b7dd003.setContent(html_b0694b3e5781e9a9c0997b88b0419720);
+            
+        
+
+        marker_8c016b8e45a3b1d1a850842f1b070fff.bindPopup(popup_cb124fde856e28da7f4472081b7dd003)
+        ;
+
+        
+    
+    
+                marker_8c016b8e45a3b1d1a850842f1b070fff.setIcon(icon_78f5e7a025aaea345e84eccd3f31765d);
+            
+    
+            var marker_d03d0f051412d0de983969a8574129f7 = L.marker(
+                [27.43126406614912, 55.43294696514699],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_f82f9ca2bbe2f9921c9d72cd8059662c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50f6609797df05c80937bd3905e957a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4efc33550ad75f253a172e55d1e2bf94 = $(`<div id="html_4efc33550ad75f253a172e55d1e2bf94" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_50f6609797df05c80937bd3905e957a8.setContent(html_4efc33550ad75f253a172e55d1e2bf94);
+            
+        
+
+        marker_d03d0f051412d0de983969a8574129f7.bindPopup(popup_50f6609797df05c80937bd3905e957a8)
+        ;
+
+        
+    
+    
+                marker_d03d0f051412d0de983969a8574129f7.setIcon(icon_f82f9ca2bbe2f9921c9d72cd8059662c);
+            
+    
+            var marker_88b40e9457d7d923293bd7a4fa279047 = L.marker(
+                [26.380304987479203, 55.91664477548585],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_3456f22d841e778ebdaca658106e92e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11fbce4da15afa5a71596ae6402042db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5654ecd220bf595b5729cf3251b89324 = $(`<div id="html_5654ecd220bf595b5729cf3251b89324" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_11fbce4da15afa5a71596ae6402042db.setContent(html_5654ecd220bf595b5729cf3251b89324);
+            
+        
+
+        marker_88b40e9457d7d923293bd7a4fa279047.bindPopup(popup_11fbce4da15afa5a71596ae6402042db)
+        ;
+
+        
+    
+    
+                marker_88b40e9457d7d923293bd7a4fa279047.setIcon(icon_3456f22d841e778ebdaca658106e92e2);
+            
+    
+            var marker_4cc33046c3fcb9a8aaaedd495ca22467 = L.marker(
+                [25.744076469689556, 54.858782737814906],
+                {
+}
+            ).addTo(map_b58b9e6c11d38caccf58330d739bbe87);
+        
+    
+            var icon_2738df0767fcdd1f971012114f382da8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f984dd1971ab671838550252f097917d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e997c05378e8b8aa2a65b64f656c251f = $(`<div id="html_e997c05378e8b8aa2a65b64f656c251f" style="width: 100.0%; height: 100.0%;">Unità Militare - Centro di Pressione</div>`)[0];
+                popup_f984dd1971ab671838550252f097917d.setContent(html_e997c05378e8b8aa2a65b64f656c251f);
+            
+        
+
+        marker_4cc33046c3fcb9a8aaaedd495ca22467.bindPopup(popup_f984dd1971ab671838550252f097917d)
+        ;
+
+        
+    
+    
+                marker_4cc33046c3fcb9a8aaaedd495ca22467.setIcon(icon_2738df0767fcdd1f971012114f382da8);
+            
+</script>
+</html>
